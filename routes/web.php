@@ -1,12 +1,3 @@
-<style>
-    h3 {
-    padding: 30px;
-    background: red;
-    border-radius: 12px;
-    color: white;
-    margin: 30px;
-    }
-</style>
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -31,19 +22,19 @@ Route::get("{lang}/product/{id}", function($lang, $id){
 })->where(['lang' => '[a-z]{2}', 'id' => '[0-9]+']);
 
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about');
+// })->name('about');
 
-$aboutPageUrl = route('about');
-dd($aboutPageUrl);
+// $aboutPageUrl = route('about');
+// dd($aboutPageUrl);
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact');
 
-$contactPageUrl = route('contact');
-dd($contactPageUrl);
+// $contactPageUrl = route('contact');
+// dd($contactPageUrl);
 
 Route::get('/product/{id}', function ($id) {
     return "Product ID: $id";
