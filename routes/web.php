@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\ShowCarController;
 
 // Route::get('/', function () {
 //     $person = [
@@ -36,3 +38,13 @@ Route::get('/search/{search}', function ($search) {
 Route::get('/sum/{a}/{b}', function ( $a , $b ) {
     return "Sum : " . ($a + $b);
 });
+
+// Route::get('/car', [CarController::class,'index']);
+
+// route::controller( CarController::class)->group(function(){
+//     Route::get('/car', 'index');
+//     Route::get('/my-cars', 'myCars');
+// });
+
+Route::get('/car/invokable',CarController::class);
+Route::get('/car',[CarController::class, 'index']);
