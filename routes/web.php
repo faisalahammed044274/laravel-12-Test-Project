@@ -21,21 +21,6 @@ Route::get("{lang}/product/{id}", function($lang, $id){
     return "<h3>Language: $lang, Product ID: $id</h3>";
 })->where(['lang' => '[a-z]{2}', 'id' => '[0-9]+']);
 
-
-// Route::get('/about', function () {
-//     return view('about');
-// })->name('about');
-
-// $aboutPageUrl = route('about');
-// dd($aboutPageUrl);
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact');
-
-// $contactPageUrl = route('contact');
-// dd($contactPageUrl);
-
 Route::get('/product/{id}', function ($id) {
     return "Product ID: $id";
 })->whereNumber('id');
