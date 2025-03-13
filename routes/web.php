@@ -2,16 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    $person = [
-        'name' => 'John Doe',
-        'email' =>'jhondoe@tester.com',
-        'phone' => '123-456-7890'
+// Route::get('/', function () {
+//     $person = [
+//         'name' => 'John Doe',
+//         'email' =>'jhondoe@tester.com',
+//         'phone' => '123-456-7890'
 
-    ];
-    dd($person);
-    return view('welcome', ['person' => $person]);
-});
+//     ];
+//     dd($person);
+//     return view('welcome', ['person' => $person]);
+// });
 
 Route::get('/user/{username}', function ($username) {
     return "Username: $username";
@@ -22,7 +22,7 @@ Route::get("{lang}/product/{id}", function($lang, $id){
 })->where(['lang' => '[a-z]{2}', 'id' => '[0-9]+']);
 
 Route::get('/product/{id}', function ($id) {
-    return "Product ID: $id";
+    return "Product ID : $id";
 })->whereNumber('id');
 
 Route::get('/product-category/{category?}', function ($category) {
@@ -32,3 +32,7 @@ Route::get('/product-category/{category?}', function ($category) {
 Route::get('/search/{search}', function ($search) {
     return "Search: $search";
 })->where('search', '.*');
+
+Route::get('/sum/{a}/{b}', function ( $a , $b ) {
+    return "Sum : " . ($a + $b);
+});
