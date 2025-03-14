@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\MathController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\ShowCarController;
 
@@ -60,3 +61,6 @@ Route::apiResources([
     '/products' => ProductController::class
 ]);
 
+
+Route::get('/addition/{num1}/{num2}',[MathController::class, 'addition']);
+Route::get('/subtraction/{num1}/{num2}',[MathController::class, 'subtract']);
