@@ -1,19 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\ShowCarController;
+// use App\Http\Controllers\CarController;
+use App\Http\Controllers\ProductController;
+// use App\Http\Controllers\ShowCarController;
 
-// Route::get('/', function () {
-//     $person = [
-//         'name' => 'John Doe',
-//         'email' =>'jhondoe@tester.com',
-//         'phone' => '123-456-7890'
+Route::get('/', function () {
+    $person = [
+        'name' => 'John Doe',
+        'email' =>'jhondoe@tester.com',
+        'phone' => '123-456-7890'
 
-//     ];
-//     dd($person);
-//     return view('welcome', ['person' => $person]);
-// });
+    ];
+    dd($person);
+    return view('welcome', ['person' => $person]);
+});
 
 Route::get('/user/{username}', function ($username) {
     return "Username: $username";
@@ -46,5 +47,9 @@ Route::get('/sum/{a}/{b}', function ( $a , $b ) {
 //     Route::get('/my-cars', 'myCars');
 // });
 
-Route::get('/car/invokable',CarController::class);
-Route::get('/car',[CarController::class, 'index']);
+// Route::get('/car/invokable',CarController::class);
+// Route::get('/car',[CarController::class, 'index']);
+
+// Route::resource('/products', ProductController::class)->except(['destroy']);
+// Route::resource('/products', ProductController::class)->only(['index']);
+Route::apiResource('/products', ProductController::class);
