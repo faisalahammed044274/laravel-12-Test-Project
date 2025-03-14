@@ -6,19 +6,43 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
-    public function __invoke()
-    {
-        return "Invoke Car Controller";
-    }
-    
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        return "Car Controller";
+        //
     }
 
-    public function myCars()
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
-        return "My Cars";
+        //
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
 }

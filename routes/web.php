@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\CarController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
 // use App\Http\Controllers\ShowCarController;
 
@@ -52,4 +52,11 @@ Route::get('/sum/{a}/{b}', function ( $a , $b ) {
 
 // Route::resource('/products', ProductController::class)->except(['destroy']);
 // Route::resource('/products', ProductController::class)->only(['index']);
-Route::apiResource('/products', ProductController::class);
+// Route::resource('/products', ProductController::class)->except(['destroy']);
+// Route::apiResource('/cars', CarController::class);
+
+Route::apiResources([
+    '/cars'=> CarController::class,
+    '/products' => ProductController::class
+]);
+
