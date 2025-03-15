@@ -16,4 +16,14 @@ class MathController extends Controller
     {
         return "Subtraction: " . ($num1 - $num2);
     }
+
+    public function multiply(float $num1, float $num2)
+    {
+        return "Multiplication: " . ($num1 * $num2);
+    }
+
+    public function divide(float $num1, float $num2)
+    {
+        return "Division: " . ($num1 / $num2);
+    }
 }

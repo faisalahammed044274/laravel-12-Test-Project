@@ -19,13 +19,13 @@
             </style>
         @endif
     </head>
-    <h1 style="text-align: center; font-size: 1.5rem; margin-top: 2rem;">
-        Welcome <strong>{{ $person['name'] }}</strong>. <br> It's Laravel 12 Testing Project.
+    {{--  <h1 style="text-align: center; font-size: 1.5rem; margin-top: 2rem;">
+        Welcome to Laravel 12 Project.
     </h1>
     <p>
      your Email is :  <a href="mailto:{{ $person['email'] }}">{{ $person['email'] }} </a> <br>  
      phone number is :  <a href="tel:{{ $person['phone'] }}">{{ $person['phone'] }}</a> <br>
-    </p>
+    </p>  --}}
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
             @if (Route::has('login'))
