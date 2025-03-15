@@ -8,7 +8,7 @@ class HomeController extends Controller
     public function index()
     {
         if (View::exists('index')) {
-            return view('index',  [])->with('name','JamesR')->with('surname','Bonddd')->with('job','<b>Developer</b>');
+            return view('index',  [])->with('hobbies', ['Reading', 'Travelling']);
         } else {
             return view('home.index');
         }
