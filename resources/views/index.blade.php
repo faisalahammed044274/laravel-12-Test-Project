@@ -117,3 +117,13 @@ Lorem ipsum dolor sit amet consectetur.
 @includeWhen($searchKeyword, 'shared.search_results', ['year'=>2019] )
 @includeUnless(! $searchKeyword, 'shared.search_results', ['year'=>2019] )
 {{--  @includeFirst(['admin.button', 'button'],['color'=>'red', 'text'=>'Click Me', 'link'=>'https://www.google.com'])  --}}
+
+@php
+  $cars = ['Toyota', 'Honda', 'BMW', 'Mercedes'];
+@endphp
+
+@foreach ($cars as $car)
+    @include('car.view', ['car' => $car])
+@endforeach
+
+@each('car.view',$cars , 'car','car.empty')
