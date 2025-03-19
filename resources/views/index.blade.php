@@ -108,4 +108,12 @@ Commenting
 
 Lorem ipsum dolor sit amet consectetur.
 
+@include('shared.button', ['text' => 'Click Me', 'color' => 'red', 'link' => 'https://www.google.com'])
+
 </div>
+
+@includeIf('shared.search_form',['year'=>2019])
+{{ $searchKeyword = 'Laravel' }}
+@includeWhen($searchKeyword, 'shared.search_results', ['year'=>2019] )
+@includeUnless(! $searchKeyword, 'shared.search_results', ['year'=>2019] )
+{{--  @includeFirst(['admin.button', 'button'],['color'=>'red', 'text'=>'Click Me', 'link'=>'https://www.google.com'])  --}}
